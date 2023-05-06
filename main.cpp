@@ -10,8 +10,6 @@
 #include <string>
 #include <vector>
 
-#include "repack.h"
-
 std::vector<std::string> split(char *str, unsigned short length, char sep)
 {
 	std::vector<std::string> v;
