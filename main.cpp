@@ -130,7 +130,7 @@ int main()
 		files[i].name = new char[k];
 		fread(files[i].name, sizeof(char), k, f);
 
-		repack_add(files[i].unknow, files[i].name);
+		//repack_add(files[i].unknow, files[i].name);
 	}
 
 	for(unsigned long i = 0; i < nbPackedFiles; i++)
@@ -179,13 +179,13 @@ int main()
 		if(fullPath == "extracted/euro/bnk/vehicules/ford_gt.bnk")
 			std::cout << files[i].unknow << std::endl;
 		
-		// FILE *f2 = fopen(fullPath.c_str(), "wb");
+		FILE *f2 = fopen(fullPath.c_str(), "wb");
 
-		// if(f2)
-		// {
-			// fwrite(data, sizeof(unsigned char), files[i].size, f2);
-			// fclose(f2);
-		// }
+		if(f2)
+		{
+			fwrite(data, sizeof(unsigned char), files[i].size, f2);
+			fclose(f2);
+		}
 
 		delete [] data;
 	}
